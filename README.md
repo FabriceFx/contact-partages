@@ -49,3 +49,33 @@ Pour que le script puisse accéder à l'annuaire du domaine, vous devez modifier
     "[https://www.google.com/m8/feeds](https://www.google.com/m8/feeds)"
   ]
 }
+
+### ⚠️ Étape Critique : Configuration Google Cloud Platform (GCP)
+
+Ce script utilise l'API historique *Domain Shared Contacts* qui nécessite un **Projet GCP Standard**. Le projet par défaut créé par Apps Script ne suffit pas.
+
+#### 1. Créer le Projet Cloud
+1. Rendez-vous sur la [Console Google Cloud](https://console.cloud.google.com/).
+2. Créez un **Nouveau Projet** (ex: `Connector-Annuaire-Workspace`).
+3. Notez le **Numéro de projet** (Project Number) qui s'affiche sur le tableau de bord d'accueil (ex: `123456789012`). *Ne confondez pas avec l'ID du projet.*
+
+#### 2. Activer l'API Contacts
+1. Dans le menu de gauche, allez dans **APIs et services** > **Bibliothèque**.
+2. Recherchez **"Contacts API"** (l'icône est un carnet d'adresses bleu standard).
+3. Cliquez dessus et appuyez sur **ACTIVER**.
+   * *Note : N'activez pas "People API", ce script utilise spécifiquement l'ancienne API Contacts.*
+
+#### 3. Configurer l'Écran de Consentement OAuth (Si nouveau projet)
+1. Toujours dans **APIs et services**, allez dans **Écran de consentement OAuth**.
+2. Sélectionnez le type d'utilisateur : **Interne** (réservé aux utilisateurs de votre organisation Workspace).
+3. Remplissez simplement le nom de l'application (ex: "Gestion Contacts") et les emails de contact obligatoires.
+4. Sauvegardez (pas besoin d'ajouter des scopes ici, le manifeste du script s'en charge).
+
+#### 4. Lier le Projet au Script
+1. Retournez dans votre **Google Sheet** > **Extensions** > **Apps Script**.
+2. Cliquez sur la roue dentée ⚙️ (**Paramètres du projet**) à gauche.
+3. Descendez à la section **Projet Google Cloud Platform (GCP)**.
+4. Cliquez sur **Changer le projet**.
+5. Entrez le **Numéro de projet** (récupéré à l'étape 1) et validez.
+
+✅ *Votre script est maintenant autorisé à communiquer avec l'API globale du domaine.*
