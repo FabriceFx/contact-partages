@@ -36,20 +36,6 @@ Pour que le script puisse accéder à l'annuaire du domaine, vous devez modifier
 2.  Cochez la case "Afficher le fichier manifeste 'appsscript.json' dans l'éditeur".
 3.  Revenez dans l'éditeur, ouvrez `appsscript.json` et remplacez son contenu par ceci :
 
-```json
-{
-  "timeZone": "Europe/Paris",
-  "dependencies": {},
-  "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8",
-  "oauthScopes": [
-    "[https://www.googleapis.com/auth/script.external_request](https://www.googleapis.com/auth/script.external_request)",
-    "[https://www.googleapis.com/auth/spreadsheets.currentonly](https://www.googleapis.com/auth/spreadsheets.currentonly)",
-    "[https://www.googleapis.com/auth/spreadsheets](https://www.googleapis.com/auth/spreadsheets)",
-    "[https://www.google.com/m8/feeds](https://www.google.com/m8/feeds)"
-  ]
-}
-
 ### ⚠️ Étape Critique : Configuration Google Cloud Platform (GCP)
 
 Ce script utilise l'API historique *Domain Shared Contacts* qui nécessite un **Projet GCP Standard**. Le projet par défaut créé par Apps Script ne suffit pas.
@@ -79,3 +65,18 @@ Ce script utilise l'API historique *Domain Shared Contacts* qui nécessite un **
 5. Entrez le **Numéro de projet** (récupéré à l'étape 1) et validez.
 
 ✅ *Votre script est maintenant autorisé à communiquer avec l'API globale du domaine.*
+
+```json
+{
+  "timeZone": "Europe/Paris",
+  "dependencies": {},
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "[https://www.googleapis.com/auth/script.external_request](https://www.googleapis.com/auth/script.external_request)",
+    "[https://www.googleapis.com/auth/spreadsheets.currentonly](https://www.googleapis.com/auth/spreadsheets.currentonly)",
+    "[https://www.googleapis.com/auth/spreadsheets](https://www.googleapis.com/auth/spreadsheets)",
+    "[https://www.google.com/m8/feeds](https://www.google.com/m8/feeds)"
+  ]
+}
+
