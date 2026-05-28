@@ -1,9 +1,15 @@
 # Gestionnaire de contacts partagés Google Workspace (Sheets)
 
+
+[🇫🇷 Version Française](#-version-française) | [🇬🇧 English Version](#-english-version)
+
 ![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Google%20Apps%20Script-green)
 ![Runtime](https://img.shields.io/badge/Google%20Apps%20Script-V8-green)
 ![Author](https://img.shields.io/badge/Auteur-Fabrice%20Faucheux-orange)
+
+## 🇫🇷 Version Française
+
 
 Une solution complète basée sur Google Apps Script pour gérer les **Contacts partagés du domaine** (annuaire global d'entreprise) directement depuis une interface Google Sheets. Ce script permet aux administrateurs Google Workspace d'importer, de créer, de mettre à jour et de supprimer des contacts en masse.
 
@@ -80,3 +86,12 @@ Ce script utilise l'API historique *Domain Shared Contacts* qui nécessite un **
   ]
 }
 
+
+
+---
+## 🇬🇧 English Version
+
+> English translation coming soon.
+
+---
+<p align="center"><a href="https://faucheux.bzh" target="_blank" style="color: inherit; text-decoration: none;">&lt;&gt; par Fabrice Faucheux</a></p>
